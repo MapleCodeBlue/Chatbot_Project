@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/baseStyle.css' %}" />
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Django Template Language -->
+    {% block head %}
+    
+    {% endblock %}
+    <title>Base Template (Admin Only)</title>
+</head>
+<body>
+<!-- <header class="rotating-header">
+    <div id=container>
+        
+        <div id=flip>
+            <div><div><a href="#">러시아 금융 제제로 인한 러시아 송금 전면 중단 안내</a></div></div>
+            <div><div><a href="#">웨스턴유니언 해외송금 제제국가 추가</a></div></div>
+            <div><div><a href="#">모든 직원분들 고객 상담 지원 챗봇 적극적으로 활용 하시기 바랍니다.</a></div></div>
+        </div>
+        
+    </div>
+</header> -->
+
+
+<!-- <div class="second-header">
+  <div class="sh--container">
+    <a href="#"><image class="desktop" src="{% static 'images/banklogo.jpg' %}"></image></a>
+  </div>
+</div> -->
+
+<header class="site-header">
+  <div class="site-identity">
+    <!-- <a href="#"><img src="{% static 'images/banklogo.jpg' %}" alt="Site Name" id="header-image"/></a> -->
+    <!-- <h1><a href="#" id="site-header-anchor">Site Name</a></h1> -->
+  <!-- </div>   -->
+  
+  <nav class="site-navigation">
+    <a href="{% url 'homepage' %}"><img src="{% static 'images/banklogo.jpg' %}" alt="Site Name" id="header-image"/></a>
+    <!-- <h2>고객지원 사이트</h2> -->
+    <ul id="title">
+      <li><a href="{% url 'homepage' %}" style="text-decoration: none; color: #333333;"><h2>혼자서 프로젝트 고객지원 사이트</h2></a></li>
+    </ul>
+
+    <ul class="nav1">
+      <li><a href="{% url 'presentation' %}" id="site-header-anchor">챗봇시연</a></li> 
+      <li><a href="#" id="site-header-anchor">타사정보</a></li> 
+    </ul>
+  </nav>
+  </div>
+</header>
+
+<nav id="navigation-menu">
+  <div class="wrapper">
+    <!-- <div class="logo"><a href="#">H 은행</a></div> -->
+
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+
+
+
+      <li>
+        <a href="#" class="desktop-item">환율/환전</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Mega Menu</label>
+        <div class="mega-box">
+          <div class="content">
+            <!-- <div class="row">
+              <img src="img.jpg" alt="">
+            </div> -->
+            <div class="row">
+              <header>환율조회</header>
+              <ul class="mega-links">
+                <li><a href="{% url 'fxquery' %}">환율조회</a></li>
+                <li><a href="{% url 'fxrateinfo' %}">환율상세안내</a></li>
+                <li><a href="#">기간별환율조회</a></li>
+                <li><a href="#">평균환율조회</a></li>
+                <li><a href="#">환율변동조회</a></li>
+                <li><a href="#">환율차트</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>환전안내</header>
+              <ul class="mega-links">
+                <li><a href="{% url 'cashexchangeinfo' %}">환전안내</a></li>
+                <li><a href="#">외국주화환전</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>환전신청/조회</header>
+              <ul class="mega-links">
+                <li><a href="#">인터넷환전신청</a></li>
+                <li><a href="#">환전내역/재환전(되팔기)</a></li>
+                <li><a href="#">환전가능영업점</a></li>
+                <li><a href="#">너도나도환전신청(비회원)</a></li>
+                <li><a href="#">너도나도환전내역/재환전(되팔기)</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>환율계산기</header>
+              <ul class="mega-links">
+                <li><a href="#">환율계산기</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>인터넷공동환전</header>
+              <ul class="mega-links">
+                <li><a href="#">공동환전신청/안내</a></li>
+                <li><a href="#">공동환전내역조회</a></li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- 외화송금 메뉴  -->
+      <li>
+        <a href="#" class="desktop-item">외화송금</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Mega Menu</label>
+        <div class="mega-box">
+          <div class="content">
+            <!-- <div class="row">
+              <img src="img.jpg" alt="">
+            </div> -->
+            <div class="row">
+              <header>외화송금안내</header>
+              <ul class="mega-links">
+                <li><a href="#">전신환해외송금안내</a></li>
+                <li><a href="#">송금항목에따른안내</a></li>
+                <li><a href="#">국내송금이용안내</a></li>
+                <li><a href="#">송금수취안내</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>해외송금</header>
+              <ul class="mega-links">
+                <li><a href="#">해외외화송금신청</a></li>
+                <li><a href="#">해외외화송금변경</a></li>
+                <li><a href="#">해외송금추적조회(GPI)</a></li>
+                <li><a href="#">거래외국환은행지정</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>웨스턴유니온송금</header>
+              <ul class="mega-links">
+                <li><a href="#">웨스턴유니온자동송금</a></li>
+                <li><a href="#">웨스턴유니온송금내역</a></li>
+                <li><a href="#">웨스턴유니온송금받기</a></li>
+                <li><a href="#">웨스턴유니온공지사항</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>국내외화송금</header>
+              <ul class="mega-links">
+                <li><a href="#">실시간외화송금(금결원이체)</a></li>
+                <li><a href="#">KEB외화송금(SWIFT이체)</a></li>
+                <li><a href="#">송수신전문조회</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- Dropdown 메뉴 , 나중에 필요할 경우 사용 참고  -->
+
+      <!-- <li>
+        <a href="#" class="desktop-item">Dropdown Menu</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+        <ul class="drop-menu">
+          <li><a href="#">Drop menu 1</a></li>
+          <li><a href="#">Drop menu 2</a></li>
+          <li><a href="#">Drop menu 3</a></li>
+          <li><a href="#">Drop menu 4</a></li>
+        </ul>
+      </li> -->
+
+
+
+      <!-- 외화예금 메뉴  -->
+      <li>
+        <a href="#" class="desktop-item">외화예금</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Mega Menu</label>
+        <div class="mega-box">
+          <div class="content">
+            <!-- <div class="row">
+              <img src="img.jpg" alt="">
+            </div> -->
+            <div class="row">
+              <header>외화예금</header>
+              <ul class="mega-links">
+                <li><a href="#">외화정기예금</a></li>
+                <li><a href="#">외화회전예금</a></li>
+                <li><a href="#">다통화월복리외화적립예금</a></li>
+                <li><a href="#">다통화외화예금</a></li>
+                <li><a href="#">트리플외화자유적립예금</a></li>
+                <li><a href="#">하나로외화자유적립예금</a></li>
+              </ul>
+            </div>
+            <!-- <div class="row">
+              <header>Email Services</header>
+              <ul class="mega-links">
+                <li><a href="#">Personal Email</a></li>
+                <li><a href="#">Business Email</a></li>
+                <li><a href="#">Mobile Email</a></li>
+                <li><a href="#">Web Marketing</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>Security services</header>
+              <ul class="mega-links">
+                <li><a href="#">Site Seal</a></li>
+                <li><a href="#">VPS Hosting</a></li>
+                <li><a href="#">Privacy Seal</a></li>
+                <li><a href="#">Website design</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </li>
+
+      <!-- 유학 이민 정보 메뉴 -->
+      <li>
+        <a href="#" class="desktop-item">유학/이민</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Mega Menu</label>
+        <div class="mega-box">
+          <div class="content">
+            <!-- <div class="row">
+              <img src="img.jpg" alt="">
+            </div> -->
+            <div class="row">
+              <header>유학금융서비스</header>
+              <ul class="mega-links">
+                <li><a href="#">이용안내</a></li>
+                <li><a href="#">해외송금자동이체서비스</a></li>
+                <li><a href="#">더모아외환서비스</a></li>
+                
+              </ul>
+            </div>
+            <div class="row">
+              <header>이민금융서비스</header>
+              <ul class="mega-links">
+                <li><a href="#">해외이주비환전/송금</a></li>
+                <li><a href="#">재외동포국내재산반출</a></li>
+                
+              </ul>
+            </div>
+            <!-- <div class="row">
+              <header>Security services</header>
+              <ul class="mega-links">
+                <li><a href="#">Site Seal</a></li>
+                <li><a href="#">VPS Hosting</a></li>
+                <li><a href="#">Privacy Seal</a></li>
+                <li><a href="#">Website design</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </li>
+
+
+      <!-- 외환 가이드 정보 메뉴  -->
+      <li>
+        <a href="#" class="desktop-item">외환가이드</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Mega Menu</label>
+        <div class="mega-box">
+          <div class="content">
+            <!-- <div class="row">
+              <img src="img.jpg" alt="">
+            </div> -->
+            <div class="row">
+              <header>외환이용안내</header>
+              <ul class="mega-links">
+                <li><a href="#">외환수수료안내</a></li>
+                <li><a href="#">더모아외환서비스</a></li>
+                <li><a href="#">적립포인트조회</a></li>
+                <li><a href="#">서식/약관/상품안내서</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>외환지식</header>
+              <ul class="mega-links">
+                <li><a href="#">위조지폐식별요령</a></li>
+                <li><a href="#">외화위조증서사기사례</a></li>
+                <li><a href="#">외환약관</a></li>
+                
+              </ul>
+            </div>
+            <!-- <div class="row">
+              <header>Security services</header>
+              <ul class="mega-links">
+                <li><a href="#">Site Seal</a></li>
+                <li><a href="#">VPS Hosting</a></li>
+                <li><a href="#">Privacy Seal</a></li>
+                <li><a href="#">Website design</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </li>
+
+      <!-- <li><a href="#">부서전환</a></li> -->
+
+      <li>
+        <a href="#" class="desktop-item">업무변경</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+        <ul class="drop-menu">
+          <li><a href="#">일반예금 업무</a></li>
+          <li><a href="#">대출 업무</a></li>
+          <li><a href="#">금융사고 접수 업무</a></li>
+          <li><a href="#">챗봇시연</a></li>
+        </ul>
+      </li>
+
+    </ul>
+
+    <!-- <div class="logo">
+      <a href="#">챗봇 실행</a>
+    </div> -->
+    <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+  </div>
+</nav>
+
+
+
+<button class="chatbox-open">
+  <i class="fa fa-comment fa-2x" aria-hidden="true"></i>
+</button>
+<button class="chatbox-close">
+  <i class="fa fa-close fa-2x" aria-hidden="true"></i>
+</button>
+<section class="chatbox-popup">
+<header class="chatbox-popup__header">
+  <aside style="flex:3">
+    <i><image src="{% static 'images/assistant.png' %}"  aria-hidden="true"/></i>
+    <!-- <i class="fa fa-user-circle fa-4x chatbox-popup__avatar" aria-hidden="true"></i> -->
+  </aside>
+  <aside style="flex:8">
+    <h1>은비서</h1> 챗봇 비서
+  </aside>
+  <aside style="flex:1">
+    <button class="chatbox-maximize"><i class="fa fa-window-maximize" aria-hidden="true"></i></button>
+  </aside>
+</header>
+<main class="chatbox-popup__main" id="#">
+  안녕하세요 저는 은비서입니다.<br> 오늘도 고객상담의 질을 높이기 위해<br> 함께 노력하겠습니다.
+</main>
+<footer class="chatbox-popup__footer">
+  <aside style="flex:1;color:#888;text-align:center;">
+    <!-- <i class="fa fa-camera" aria-hidden="true"></i> -->
+  </aside>
+  <aside style="flex:10">
+    <!-- <textarea type="text" placeholder="질문은 이곳에 입력해 주세요..." autofocus></textarea> -->
+    <input type="text" placeholder="질문을 입력해 주세요...왈 왈" id="#" autofocus></input>
+  </aside>
+  <aside style="flex:1;color:#888;text-align:center;">
+    <button id="#"><i class="fa fa-paper-plane" aria-hidden="true" ></i></button>
+  </aside>
+</footer>
+</section>
+<section class="chatbox-panel">
+<header class="chatbox-panel__header" id="main--extension">
+  <aside style="flex:3" id="icon--extension">
+    <i><image src="{% static 'images/assistant.png' %}"/></i>
+    <!-- <i class="fa fa-user-circle fa-3x chatbox-popup__avatar" aria-hidden="true"></i> -->
+  </aside>
+  <aside style="flex:6" id="head--extension">
+    <h1>은비서</h1> 챗봇 비서
+  </aside>
+  <aside style="flex:3;text-align:right;" id="click-button--extension">
+    <button class="chatbox-minimize"><i class="fa fa-window-restore" aria-hidden="true"></i></button>
+    <button class="chatbox-panel-close"><i class="fa fa-close" aria-hidden="true"></i></button>
+  </aside>
+</header>
+<main class="chatbox-panel__main" id="chatbox" style="flex:1">
+  어머~ 대화 창을 키우셨네요? <br> 질문이 많으신가봐요?<br> 
+</main>
+<footer class="chatbox-panel__footer">
+  <aside style="flex:1;color:#888;text-align:center;">
+    <!-- <i class="fa fa-camera" aria-hidden="true"></i> -->
+  </aside>
+  <aside style="flex:10">
+    <!-- <textarea type="text" placeholder="질문은 이곳에 입력해 주세요..." id="chattext" autofocus></textarea> -->
+    <input type="text" placeholder="질문을 입력해 주세요...왈 왈" id="chattext" autofocus></input>
+  </aside>
+  <aside style="flex:1;color:#888;text-align:center;">
+    <button id="sendbtn"><i class="fa fa-paper-plane" aria-hidden="true" ></i></button>
+  </aside>
+</footer>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<!-- <script src="{% static 'homepage/chat.js' %}"></script> -->
+<script src="{% static 'homepage/chattest.js' %}"></script>
+
+
+
+{% block content%}
+{% endblock %}
+
+<footer>
+  <div class="footer-content">
+      <h3>KDT713 챗봇 프로젝트</h3>
+      <p>
+        KDT 챗봇 프로젝트 프로토타입
+        
+      </p>
+      <ul class="socials">
+          <li><a href="https://stackoverflow.com/users/19631768/maple-blue?tab=summary" target="_blank" rel="noopener noreferrer" ><i class="fa fa-stack-overflow"></i></a></li>
+          <li><a href="https://github.com/MapleCodeBlue" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a></li>
+          <!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li> -->
+      </ul>
+  </div>
+  <div class="footer-bottom">
+      <p>copyright &copy; <a href="#">김찬결</a>  </p>
+              <div class="footer-menu">
+                <ul class="f-menu">
+                  <li><a href="">Home</a></li>
+                  <li><a href="">About</a></li>
+                  <li><a href="">Contact</a></li>
+                  <li><a href="">Blog</a></li>
+                </ul>
+              </div>
+  </div>
+  
+</footer>
+
+
+
+</body>
+</html>

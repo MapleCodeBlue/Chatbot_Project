@@ -1,0 +1,110 @@
+{% extends "homepage/base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'homepage/homeStyle.css' %}" />
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+        <img src="{% static 'images/banner2.jpg' %}" style="width: 100%;">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+        <img src="{% static 'images/banner5.jpg' %}" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+        <img src="{% static 'images/banner6.jpg' %}" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+        <img src="{% static 'images/banner3.jpg' %}" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="{% static 'images/banner2.jpg' %}" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+        <img src="{% static 'images/banner4.jpg' %}" style="width:100%">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <!-- <div class="caption-container">
+      <p id="caption"></p>
+    </div> -->
+  
+    <!-- Thumbnail images -->
+    <!-- <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="img_woods.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img_5terre.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img_mountains.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img_lights.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img_nature.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="img_snow.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+      </div>
+    </div> -->
+    
+</div>
+
+<!-- <div id="fx-show">
+  <ul>
+    <button class="button">Click Me</button>
+    <button class="button">Click Me</button>
+    <button class="button">Click Me</button>
+  </ul>
+  
+
+  <IFRAME style="position: relative;" WIDTH="189" HEIGHT="173" FRAMEBORDER="NO" SCROLLING="NO" TOPMARGIN="0" LEFTMARGIN="0" SRC="https://banking.nonghyup.com/main/mp/iframe_cp_pe.jsp?Type=A" NAME=EXC HSPACE="0" VSPACE="0" BORDER="0" ></IFRAME>
+</div> -->
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="{% static 'homepage/homeJS.js' %}"></script>
+
+{% endblock %}

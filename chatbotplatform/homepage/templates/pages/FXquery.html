@@ -1,0 +1,55 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'homepage/generalInformation.css' %}"  />
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+<section id="general-section">
+    <header id="general-header">
+        <h2 class="general-h2">환율조회</h2>
+    </header>
+    <article class="general-text-container">
+        <table style="border: 1px solid;">
+            <tr style="border: 1px solid;">
+                <th>국가명</th>
+                <th>통화명</th>
+                <th>매매기준율</th>
+            </tr>
+            <tr style="border: 1px solid;">
+                <td>미국</td>
+                <td>USD</td>
+                <td>{{ rate }}</td>
+            </tr>
+        </table>
+
+        <p>
+            {% with answer=rate %}
+            {{ answer|mul:0.9825 }}
+
+
+            {% endwith %}
+        </p>
+        <ol>
+            <li>
+            최근1년간 해외송금 혹은 외환거래가 있었는지에대한 여부를 재확인해주세요
+            <ul>
+                <li>만약 있다면 "통합서비스"에서 본인확인 진행 후 등록여부를 확인해주세요</li>
+            </ul>
+            </li>
+            <li></li>
+            
+        </ol>
+        
+        
+        
+       
+    </article>
+</section>
+
+<script src="{% static 'homepage/chattest.js' %}"></script>
+{% endblock %}

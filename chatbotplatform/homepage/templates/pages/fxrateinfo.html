@@ -1,0 +1,41 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'homepage/generalInformation.css' %}"  />
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+<section id="general-section">
+    <header id="general-header">
+        <h2 class="general-h2">환율 매입 및 매도 관련 정보!</h2>
+    </header>
+    <article class="general-text-container">
+        <ul class="txt_type5">
+            <li>상기 현찰  스프레드는  현찰매매  환율 결정시 적용되는 비율입니다.
+                <ul class="txt_type3" style="list-style-type:none; padding: 5px; ">
+                    <li>현찰 사실때  환율 = 매매기준율 + (매매기준율 * 사실때  스프레드)</li>
+                    <li>현찰 파실때  환율 = 매매기준율 - (매매기준율 *  파실때  스프레드)</li>
+                </ul>
+            </li>
+            <li><strong>송금보내실 때</strong> = <strong>외화예금입금시</strong> = <strong>전신환매도율</strong>입니다.</li>
+            <li><strong>송금받으실 때</strong> = <strong>외화예금지급시</strong> = <strong>전신환매입율</strong>입니다.</li>
+            <li>스프레드에는 외국통화 환전거래와 관련하여 발생하는 외국통화 수출입 관련 비용, 국내 현•수송 비용, 외국통화 보유에 따른 비용 등이 반영되어 있으며 시장상황에 따라 변경될 수 있습니다.</li>
+            <li>환전거래에 따른 통화별 관련 비용이 다르기 때문에 현찰을 사고 팔 때 적용되는 스프레드는 통화별로 차이가 있습니다.</li>
+            <li>일본(JPY), 인도네시아(IDR), 베트남(VND)은 100단위로 고시됩니다.</li>
+            <li>인도(INR), 남아프리카공화국(ZAR), 멕시코(MXN), 베트남(VND)은 현찰관련 거래 불가합니다.</li>
+            <li>중국 위안화(CNY)환율은 홍콩시장에서 거래되는 위안화 환율이 적용됩니다.</li>
+            <li>일부통화는 환전 또는 송금거래가 불가(제한)될 수 있으니 영업점에 거래가능여부 문의 후 거래해 주세요.</li>
+            <li><strong>해외송금 보내실때 필요한 정보</strong> : 받으실 분 성명 및 주소,  받으실 분 전화번호,  받으실 분 계좌번호,  <br>
+            수취은행(SWIFT BIC),  수취은행 주소</li>
+            <li><strong>해외송금 받으실때 필요한 정보</strong> : 농협은행 SWIFT Code: NACFKRSEXXX,  받으실 분 성명 및 주소,  <br>
+            받으실 분 전화번호,  받으실 분 계좌번호</li>						    
+            <li><strong>고객지원센터</strong> : ☎ 1588-2100 또는 1544-2100(내선 720 또는 730),  해외: 82-2-3704-1004(내선 720 또는 730)</li>
+       </ul>
+    </article>
+</section>
+
+<script src="{% static 'homepage/chattest.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,198 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'homepage/generalInformation.css' %}"  />
+    <link rel="stylesheet" href="{% static 'homepage/style.css' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+<style>
+.tit_type1{
+    line-height: 16px;
+    font-family: '돋움',Dotum,Helvetica,AppleGothic,sans-serif;
+    cursor: default;
+    padding: 0;
+    border: 0;
+    margin: 31px 0 6px 0;
+    padding-left: 9px;
+    background: url(/images/CN/bull_tit_type1.gif) no-repeat 0 5px;
+    color: #1776b4;
+    font-size: 14px;
+    margin-top: 0 !important;
+}
+
+.txt_type1{
+    line-height: 16px;
+    font-family: '돋움',Dotum,Helvetica,AppleGothic,sans-serif;
+    color: #4b4e5a;
+    cursor: default;
+    font-size: 100%;
+    padding: 0;
+    border: 0;
+    padding-left: 7px;
+    background: url(/images/CN/bull_txt_type1.gif) no-repeat 0 7px;
+    margin: 6px 0 5px 0;
+}
+    
+.claer{
+    line-height: 16px;
+    font-family: '돋움',Dotum,Helvetica,AppleGothic,sans-serif;
+    font-size: 12px;
+    color: #4b4e5a;
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: block;
+    margin-top: 10px !important;
+}
+</style>
+
+
+
+<section id="general-section">
+    <header id="general-header">
+        <h2 class="general-h2">환전안내</h2>
+    </header>
+    <article class="general-text-container">
+        <ul class="txt_type5">
+            <li>외화현찰이나 여행자수표 등을 은행에서 사거나 팔고자 할 때 그 가능금액과 서류를 안내해 드립니다.</li>
+            <li>전체 비대면채널(인터넷/스마트뱅킹, NH올원뱅크)환전 한도 : 환전신청 후 미수령한 외화금액이 미화환산 1만불 초과시 추가 환전 신청이 불가합니다. 영업점에서 해당 외화를 수령 후 추가 신청이 가능합니다.</li>
+        </ul>
+        <h2 class="tit_type1">인터넷 환전 가능 통화와 최저 환전 단위</h2>
+        <p class="txt_type1">인터넷으로 환전이 가능한 통화 종류와 통화별 최저 환전 가능한 단위입니다.</p>
+
+        <div class="clear">
+            <div class="f_left" style="width:48%;">
+                <table class="tb_col t_center" summary="이 표는 통화종류, 약어, 환전가능 최저통화 항목으로 구성되어 있습니다.">
+                    <caption>환전단위</caption>
+                    <colgroup>
+                        <col style="width:10%;">
+                        <col style="width:30%;">
+                        <col style="width:20%;">
+                        <col style="width:auto;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="2">통화종류</th>
+                            <th scope="col">약어</th>
+                            <th scope="col" style="border-right: none;">환전가능 최저통화</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_USD.gif" alt="미국 국기"></td>
+                            <td>미국 달러</td>
+                            <td>USD</td>
+                            <td class="t_right" style="border-right: none;">1</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_EUR.gif" alt="유럽연합 국기"></td>
+                            <td>유럽연합 유로</td>
+                            <td>EUR</td>
+                            <td class="t_right" style="border-right: none;">5</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_AUD.gif" alt="호주 국기"></td>
+                            <td>호주 달러</td>
+                            <td>AUD</td>
+                            <td class="t_right" style="border-right: none;">10</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_CHF.gif" alt="스위스 국기"></td>
+                            <td>스위스 프랑</td>
+                            <td>CHF</td>
+                            <td class="t_right" style="border-right: none;">10</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_HKD.gif" alt="홍콩 국기"></td>
+                            <td>홍콩 달러</td>
+                            <td>HKD</td>
+                            <td class="t_right" style="border-right: none;">100</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_PHP.gif" alt="필리핀 국기"></td>
+                            <td>필리핀 페소</td>
+                            <td>PHP</td>
+                            <td class="t_right" style="border-right: none;">1,000</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_THB.gif" alt="태국 국기"></td>
+                            <td>태국 바트</td>
+                            <td>THB</td>
+                            <td class="t_right" style="border-right: none;">100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="f_right" style="width:48%;">
+                <table class="tb_col t_center" summary="이 표는 통화종류, 약어, 환전가능 최저통화 항목으로 구성되어 있습니다.">
+                    <caption>환전단위</caption>
+                    <colgroup>
+                        <col style="width:10%;">
+                        <col style="width:30%;">
+                        <col style="width:20%;">
+                        <col style="width:auto;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="2">통화종류</th>
+                            <th scope="col">약어</th>
+                            <th scope="col" style="border-right: none;">환전가능 최저통화</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_JPY.gif" alt="일본 국기"></td>
+                            <td>일본 엔</td>
+                            <td>JPY</td>
+                            <td class="t_right" style="border-right: none;">1,000</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_CNY.gif" alt="중국 국기"></td>
+                            <td>중국 위안</td>
+                            <td>CNY</td>
+                            <td class="t_right" style="border-right: none;">100</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_CAD.gif" alt="캐나다 국기"></td>
+                            <td>캐나다 달러</td>
+                            <td>CAD</td>
+                            <td class="t_right" style="border-right: none;">10</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_GBP.gif" alt="영국 국기"></td>
+                            <td>영국 파운드</td>
+                            <td>GBP</td>
+                            <td class="t_right" style="border-right: none;">10</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_NZD.gif" alt="뉴질랜드 국기"></td>
+                            <td>뉴질랜드 달러</td>
+                            <td>NZD</td>
+                            <td class="t_right" style="border-right: none;">10</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_SGD.gif" alt="싱가포르 국기"></td>
+                            <td>싱가포르 달러</td>
+                            <td>SGD</td>
+                            <td class="t_right" style="border-right: none;">50</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/images/IP/ef/exrate_ic_TWD.gif" alt="대만 국기"></td>
+                            <td>대만 달러</td>
+                            <td>TWD</td>
+                            <td class="t_right" style="border-right: none;">1,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+    </article>
+</section>
+
+<script src="{% static 'homepage/chattest.js' %}"></script>
+{% endblock %}

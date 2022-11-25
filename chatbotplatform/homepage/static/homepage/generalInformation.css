@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: '돋움',Dotum,Helvetica,AppleGothic,sans-serif;
+    box-sizing: border-box;
+}
+
+#general-section{
+    /* border: 1px solid red; */
+    /* display: inline-block; */
+    /* justify-content: center; */
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    margin-left: 100px;
+    width: 70%;
+    height: 100%;
+    border-left: 0.5px solid;
+    /* border-right: 0.5px solid; */
+
+}
+    
+
+#general-header{
+    /* border: 1px solid blue; */
+    text-align: left;
+    left: 200px;
+
+}
+
+.general-h2{
+    margin-left: 50px;
+    font-size: 24px;
+    height: 46px;
+    line-height: 26px;
+    color: #009aca;
+    font-size: 24px;
+    font-family: '맑은 고딕',Malgun Gothic;
+    font-weight: normal;
+    letter-spacing: -0.06em;
+
+    border-bottom: 0.5px solid ;
+
+}
+
+
+/* .txt_type5{
+    text-align: left;
+    letter-spacing: 0.09em;
+    margin-left: 90px;
+} */
+
+.general-text-container{
+    text-align: left;
+    letter-spacing: 0.09em;
+    margin-left: 80px;
+    margin-top: 20px;
+    
+}
+
+.txt_type5{
+    /* list-style-type:none; */
+    padding: 5px;
+    border: 0.5px solid ;
+}
+
+.txt_type5 li{
+    margin-top: 10px;
+    margin-left: 30px;
+}

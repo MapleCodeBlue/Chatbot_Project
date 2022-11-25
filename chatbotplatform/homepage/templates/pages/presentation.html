@@ -1,0 +1,176 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'homepage/generalInformation.css' %}"  />
+<link rel="stylesheet" href="{% static 'homepage/style.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<style>
+* {
+  box-sizing: border-box;
+}
+#presentation {
+  font-family: "Open Sans";
+  /* background: #2c3e50; */
+  color: #ecf0f1;
+  line-height: 1.618em;
+  position: relative;
+  /* margin-right: 200px; */
+}
+#presentation-wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-left: 250px;
+}
+#presentation-tabs {
+  position: relative;
+  margin: 3rem 0;
+  /* background: #1abc9c; */
+  height: 14.75rem;
+}
+#presentation-tabs::before,
+#presentation-tabs::after {
+  content: "";
+  display: table;
+}
+#presentation-tabs::after {
+  clear: both;
+}
+.tab {
+  float: left;
+}
+.tab-switch {
+  display: none;
+}
+.tab-label {
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  /* background: #1abc9c; */
+  background: #0360a5;
+  /* border-right: 0.125rem solid #16a085; */
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+  font-weight: bold;
+}
+.tab-label:hover {
+  top: -0.25rem;
+  transition: top 0.25s;
+}
+.tab-content {
+  height: 15rem;
+  position: static;
+  z-index: 1;
+  top: 2.75em;
+  left: 0;
+  padding: 1.618rem;
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0.25rem solid #bdc3c7;
+  opacity: 0;
+  transition: all 0.35s;
+}
+.tab-switch:checked + .tab-label {
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0;
+  border-right: 0.125rem solid #fff;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+.tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all 0.35s;
+}
+
+#presentation-h3 {
+    letter-spacing: 0.1px;
+    border-bottom: 0.8px solid;
+    margin-bottom: 5px;
+}
+
+#presentation-p {
+    margin-top: 5px;
+    font-size: 19px;
+    font-weight: 1200px;
+    font-family: '돋움',Dotum,Helvetica,AppleGothic,sans-serif;;
+    padding-top: 5px;
+}
+
+
+</style>
+
+
+
+<body id="presentation">
+<div class="wrapper" id="presentation-wrapper">
+    <div class="tabs" id="presentation-tabs">
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+        <label for="tab-1" class="tab-label"><h3>첫번째 시나리오</h3></label>
+        <div class="tab-content"> 
+            <h3 id="presentation-h3">고객질문</h3>
+            <p id="presentation-p">
+            안녕하세요. 제 딸이 작년에 호주에 유학을 갔거든요.<br>
+            그런데 그때도 딸이 유학 준비를 다 혼자서 하고 해서 저는 신경을 안썼어요.<br>
+            그런데 제가 딸 생일이 내일이라서 선물을 해줄 수도 없고,<br>
+            대신 생활비에 보태라고 돈을 좀 보내주고 싶은데요. 제가 한번도 해외로 돈을 
+            보내본 적이 없어요. 제가 뭘 어떻게 해야하는지 알려주실 수 있나요?. 
+            </p>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <label for="tab-2" class="tab-label"><h3>두번째 시나리오</h3></label>
+        <div class="tab-content">
+            <h3 id="presentation-h3">고객질문</h3>
+            <p id="presentation-p">
+            수고가 많으십니다. 제가 유투브 채널을 운영하면서 수익을 받고 있는데요.
+            돈이 도착을 할때가 되었는데 아직 안왔네요. 
+            확인좀 해주실 수 있나요?.
+            </p>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+        <label for="tab-3" class="tab-label"><h3>세번째 시나리오</h3></label>
+        <div class="tab-content">
+            <h3 id="presentation-h3">고객질문</h3>
+            <p id="presentation-p">
+                안녕하세요. 수고 많으십니다. 요즘들어서 계속 달러가 오르고 있는데요
+                금리도 오르고 있잖아요. 그래서 그... 달러로 예금을 하나 들고 싶은데요. 
+                제가 들을 수 있는 그런 상품이 있을까요?. 
+            </p>
+        </div>
+      </div>
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+        <label for="tab-4" class="tab-label"><h3>네번째 시나리오</h3></label>
+        <div class="tab-content">
+            <h3 id="presentation-h3">고객질문</h3> 
+            <p id="presentation-p">
+                Hi~ I have this card with the H bank and I was 
+                charged for something i haven't bought online. 
+                And I wanna know what's going on with it. 
+            </p>
+        </div>
+      </div>
+    </div>
+    <p>Example line outside of tab box</p>
+  </div>
+<script src="{% static 'homepage/chattest.js' %}"></script>
+</body>
+
+
+
+{% endblock %}
